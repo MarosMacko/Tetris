@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.12)
 project(Tetris)
 
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_C_STANDARD 11)
 
 set(CMAKE_CONFIGURATION_TYPES Debug;Release)
 
