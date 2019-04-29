@@ -9,7 +9,7 @@ Pure C Tetris for Linux and Windows (hint: works better in Linux)
 | Windows | CodeBlocks | Partial (tested)    |
 | Windows | (C)Make    | Should work         |
 
-## Build instructions :hammer_pick:
+## Build instructions :hammer:
 
 ## Windows/Linux - CLion
 
