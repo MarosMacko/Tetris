@@ -11,7 +11,7 @@ int initializeScoreboard(void)
     return fclose(fp);
 }
 
-inline void printBoard(struct dln_board * board, int n)
+inline void printBoard(struct dlnBoard * board, int n)
 {
     printf("\nRank\t| Level\t| Score\t| \t  Name\t\t| \t   Date\t\t|\n");
     for(int j=0; j<73; j++) printf("-");
@@ -44,20 +44,19 @@ int displayScoreBoard(int size)
 
     char buf[150];
 
-    struct dln_board tmp; //DoublyLinkedNode
+    struct dlnBoard tmp; //DoublyLinkedNode
     tmp.next = NULL; //default values for first member
     tmp.prev = NULL;
 
-    struct dln_board * first = NULL;
+    struct dlnBoard * first = NULL;
 
     while(fgets(buf, sizeof(buf), fp) != NULL)
     {
         if(sscanf(buf, "%19[^;]; %u; %19[^;]; %lu", tmp.time, &tmp.level, tmp.name, &tmp.score) == 4)
         {
-            struct dln_board * it = first;
-            struct dln_board * newNode = calloc(1, sizeof(struct dln_board));
+            struct dlnBoard * newNode = calloc(1, sizeof(struct dlnBoard));
             if(newNode == NULL) continue;
-            memcpy(newNode, &tmp, sizeof(struct dln_board));
+            memcpy(newNode, &tmp, sizeof(struct dlnBoard));
 
             if(!first) //first datapoint insertion
             {
@@ -65,14 +64,15 @@ int displayScoreBoard(int size)
                 continue;
             }
 
+            struct dlnBoard * it = first;
             while(it->next && (it->score >= newNode->score)) it = it->next;
-            if(it->prev == NULL)  //Add before first
+            if(it->prev == NULL && it->score < newNode->score)  //Add before first
             {
                 first = newNode;
                 newNode->next = it;
                 it->prev = newNode;
             }
-            else if (!(it->next) && (it->score > newNode->score)) //Add after last
+            else if (!(it->next)) //Add after last
             {
                 it->next = newNode;
                 newNode->prev = it;
@@ -101,10 +101,10 @@ int displayScoreBoard(int size)
     printBoard(first, size);
 
     //free (yeah exiting the program anyway, but :) )
-    struct dln_board * it = first;
+    struct dlnBoard * it = first;
     while(it != NULL)
     {
-        struct dln_board * next = it->next;
+        struct dlnBoard * next = it->next;
         free(it);
         it = next;
     }

@@ -10,14 +10,14 @@
 #include <string.h>
 #include <time.h>
 
-struct dln_board
+struct dlnBoard
 {
     char time[20];
     char name[20];
     unsigned long score;
     unsigned level;
-    struct dln_board * next;
-    struct dln_board * prev;
+    struct dlnBoard * next;
+    struct dlnBoard * prev;
 };
 
 /**
@@ -30,7 +30,7 @@ int initializeScoreboard(void);
  * Print the doubly linked list
  * @param board
  */
-void printBoard(struct dln_board * board, int n);
+void printBoard(struct dlnBoard * board, int n);
 
 /**
  * Display first n people
