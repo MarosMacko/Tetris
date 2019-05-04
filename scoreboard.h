@@ -26,17 +26,20 @@ struct dlnBoard
  */
 int initializeScoreboard(void);
 
+
 /**
  * Print the doubly linked list
  * @param board
  */
 void printBoard(struct dlnBoard * board, int n);
 
+
 /**
  * Display first n people
  * @return
  */
 int displayScoreBoard(int size);
+
 
 /**
  * Appends a person to scoreboard

@@ -58,7 +58,7 @@ int displayScoreBoard(int size)
             if(newNode == NULL) continue;
             memcpy(newNode, &tmp, sizeof(struct dlnBoard));
 
-            if(!first) //first datapoint insertion
+            if(!first)
             {
                 first = newNode;
                 continue;
