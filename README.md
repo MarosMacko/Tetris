@@ -13,13 +13,13 @@ Pure C Tetris for Linux and Windows (hint: works better in Linux)
 
 ## Windows/Linux - CLion
 
-* Download/Clone repo (`git clone https://github.com/MarosMacko/Tetris_in_C.git`)
+* Clone or download the repository (`git clone https://github.com/MarosMacko/Tetris_in_C.git`)
 * File -> New CMake project from sources -> Select the folder -> Open existing project
 * File -> Reload CMake project (or Tools -> CMake -> Reload CMake project)
 
 ## Linux - CMake
 
-* Download/Clone repo (`git clone https://github.com/MarosMacko/Tetris_in_C.git`)
+* Clone or download the repository (`git clone https://github.com/MarosMacko/Tetris_in_C.git`)
 * `cd` into the folder
 ```
 mkdir build
@@ -31,6 +31,7 @@ make
 
 ## Codeblocks
 
+* Clone or download the repository (.zip file and unextract)
 * Open .cbp file
 * Select `Release` target
 * Cross your fingers and hit Build (and run)
